@@ -1,13 +1,41 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for in-page navigation and route changes */
+html {
+	scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Page transition helpers used by App.js */
+.page-transition-enter {
+	opacity: 0;
+	transform: translateY(8px);
 }
+.page-transition-enter-active {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 260ms ease-out, transform 260ms ease-out;
+}
+.page-transition-exit {
+	opacity: 1;
+	transform: translateY(0);
+}
+.page-transition-exit-active {
+	opacity: 0;
+	transform: translateY(-8px);
+	transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+/* Reveal on scroll helpers */
+.reveal-on-scroll {
+	opacity: 0;
+	transform: translateY(18px);
+	transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1);
+	will-change: opacity, transform;
+}
+.reveal-on-scroll.revealed {
+	opacity: 1;
+	transform: translateY(0);
+}
+
