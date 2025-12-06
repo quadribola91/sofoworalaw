@@ -42,11 +42,6 @@ export default function AboutPage() {
       >
         <div className="max-w-4xl mx-auto text-start">
           <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
-            <img
-              src={logoBlueLarge}
-              alt="Olumide Sofowora Logo"
-              className="h-40 md:h-48"
-            />
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 About Our Firm

@@ -51,13 +51,14 @@ export default function Header() {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* LOGO */}
-        <img
-          src={scrolled ? logoDark : logoLight}
-          alt="Olumide Sofowora Logo"
-          className="h-20 transition-all duration-500"
-          style={{ padding: "0.8rem 0" }}
-        />
-
+        <Link to="/">
+          <img
+            src={scrolled ? logoDark : logoLight}
+            alt="Olumide Sofowora Logo"
+            className="h-20 transition-all duration-500"
+            style={{ padding: "0.8rem 0" }}
+          />
+        </Link>
         {/* DESKTOP NAV BAR */}
         <nav className="hidden md:block">
           <ul
