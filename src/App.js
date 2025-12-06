@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
 
 // Pages
-import HomePage from "../src/pages/Homepage";
+import HomePage from "../src/pages/HomePage";
 import PracticeAreas from "../src/pages/PracticeAreas";
 import TeamPage from "../src/pages/TeamPage";
 import AboutPage from "../src/pages/AboutPage";

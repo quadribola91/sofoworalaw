@@ -50,9 +50,10 @@
 
     <!-- Security Headers -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Updated CSP to allow all images -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https:; font-src 'self' https:; connect-src 'self' https://sofoworalaw.com;"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data:; font-src 'self' https:; connect-src 'self' https://sofoworalaw.com;"
     />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
