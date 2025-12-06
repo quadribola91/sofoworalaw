@@ -2,12 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build",
   "framework": "react",
-  "env": [
-    {
-      "key": "REACT_APP_API_URL",
-      "description": "Backend API URL for server-side validation"
-    }
-  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
   "headers": [
     {
       "source": "/(.*)",
@@ -30,7 +25,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src * data: blob:; font-src 'self' https: data:; connect-src 'self' https://*.sofoworalaw.com https://api.sofoworalaw.com; frame-ancestors 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self' https:; connect-src 'self' https://*.sofoworalaw.com; frame-ancestors 'self';"
         },
         {
           "key": "Permissions-Policy",
