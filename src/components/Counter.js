@@ -59,7 +59,9 @@ export default function Counter() {
             <div key={idx} className="bg-white rounded shadow p-6">
               <div className="flex items-center justify-center gap-3 mb-3">
                 <IconComponent className="text-4xl text-brand" aria-hidden />
-                <div className="text-4xl font-bold text-brand">{numbers[idx]}</div>
+                <div className="text-4xl font-bold text-brand">
+                  {numbers[idx]}
+                </div>
               </div>
               <div className="mt-2 text-lg font-semibold">{counter.title}</div>
             </div>

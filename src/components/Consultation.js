@@ -22,17 +22,33 @@ export default function Consult() {
             />
             <select className="w-full p-3 border border-brand rounded" required>
               <option value="">Select A Practice Area</option>
-              <option value="Admiralty & Maritime Law">Admiralty & Maritime Law</option>
-              <option value="Advisory, Compliance & Regulation">Advisory, Compliance & Regulation</option>
+              <option value="Admiralty & Maritime Law">
+                Admiralty & Maritime Law
+              </option>
+              <option value="Advisory, Compliance & Regulation">
+                Advisory, Compliance & Regulation
+              </option>
               <option value="Arbitration & ADR">Arbitration & ADR</option>
-              <option value="Corporate & Commercial Law">Corporate & Commercial Law</option>
-              <option value="Commercial Litigation">Commercial Litigation</option>
-              <option value="Energy and Natural Resources">Energy and Natural Resources</option>
-              <option value="Intellectual Property">Intellectual Property</option>
+              <option value="Corporate & Commercial Law">
+                Corporate & Commercial Law
+              </option>
+              <option value="Commercial Litigation">
+                Commercial Litigation
+              </option>
+              <option value="Energy and Natural Resources">
+                Energy and Natural Resources
+              </option>
+              <option value="Intellectual Property">
+                Intellectual Property
+              </option>
               <option value="Litigation">Litigation</option>
-              <option value="Private & Property Law">Private & Property Law</option>
+              <option value="Private & Property Law">
+                Private & Property Law
+              </option>
               <option value="Public Law">Public Law</option>
-              <option value="Technology, Telecommunications & Media">Technology, Telecommunications & Media</option>
+              <option value="Technology, Telecommunications & Media">
+                Technology, Telecommunications & Media
+              </option>
             </select>
             <textarea
               placeholder="Your Message"

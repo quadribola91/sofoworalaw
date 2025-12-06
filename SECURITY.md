@@ -1,6 +1,7 @@
 # Security & Backend Validation Guide
 
 ## Overview
+
 This document outlines the security best practices and server-side validation strategy for the Olumide Sofowora Law Firm website.
 
 ---
@@ -8,12 +9,15 @@ This document outlines the security best practices and server-side validation st
 ## 🔒 Client-Side Security (Frontend)
 
 ### Input Sanitization
+
 All user inputs are sanitized to prevent XSS (Cross-Site Scripting) attacks:
+
 - Dangerous characters (`<`, `>`, `"`, `'`) are HTML-encoded
 - Input length is limited to 500 characters
 - All input is trimmed and validated before processing
 
 ### Location: `src/components/Chatbot.js`
+
 ```javascript
 const sanitizeInput = (input) => {
   if (typeof input !== "string") return "";
@@ -38,37 +42,44 @@ All user inputs MUST be re-validated and sanitized on the server. Client-side sa
 ### Required Server-Side Checks
 
 1. **Input Type Validation**
+
    - Verify input is string/expected type
    - Check content length (max 500 chars)
    - Validate format (email, phone, etc.)
 
 2. **SQL Injection Prevention**
+
    - Use parameterized queries / prepared statements
    - **NEVER** concatenate user input into SQL queries
    - Use an ORM or query builder
 
    ❌ **DON'T:**
+
    ```sql
    SELECT * FROM users WHERE email = '" + userInput + "'
    ```
 
    ✅ **DO:**
+
    ```javascript
-   db.query("SELECT * FROM users WHERE email = ?", [userEmail])
+   db.query("SELECT * FROM users WHERE email = ?", [userEmail]);
    ```
 
 3. **XSS Prevention**
+
    - Escape HTML entities in all outputs
    - Use templating engines that auto-escape
    - Set Content-Security-Policy headers
    - Validate against a whitelist of allowed content
 
 4. **CSRF Protection**
+
    - Use CSRF tokens for state-changing operations (POST, PUT, DELETE)
    - Validate `Origin` and `Referer` headers
    - Use SameSite cookies
 
 5. **Rate Limiting**
+
    - Implement rate limiting on API endpoints
    - Limit chatbot messages (e.g., 10 requests per minute)
    - Block suspicious patterns (rapid-fire requests)
@@ -86,9 +97,9 @@ All user inputs MUST be re-validated and sanitized on the server. Client-side sa
 
 ```javascript
 // Middleware for input sanitization
-const validator = require('validator');
-const rateLimit = require('express-rate-limit');
-const csrf = require('csurf');
+const validator = require("validator");
+const rateLimit = require("express-rate-limit");
+const csrf = require("csurf");
 
 // CSRF Protection
 app.use(csrf());
@@ -97,21 +108,21 @@ app.use(csrf());
 const chatLimiter = rateLimit({
   windowMs: 60 * 1000, // 1 minute
   max: 10, // 10 requests per minute
-  message: "Too many messages sent, please try again later."
+  message: "Too many messages sent, please try again later.",
 });
 
 // Input validation endpoint
-app.post('/api/chat', chatLimiter, (req, res) => {
+app.post("/api/chat", chatLimiter, (req, res) => {
   const { message } = req.body;
 
   // Step 1: Check if message exists and is string
-  if (!message || typeof message !== 'string') {
-    return res.status(400).json({ error: 'Invalid input' });
+  if (!message || typeof message !== "string") {
+    return res.status(400).json({ error: "Invalid input" });
   }
 
   // Step 2: Length validation
   if (message.length > 500 || message.length === 0) {
-    return res.status(400).json({ error: 'Message too long or empty' });
+    return res.status(400).json({ error: "Message too long or empty" });
   }
 
   // Step 3: Sanitize (server-side)
@@ -119,7 +130,7 @@ app.post('/api/chat', chatLimiter, (req, res) => {
 
   // Step 4: Additional validation
   if (!validator.isLength(sanitized, { min: 1, max: 500 })) {
-    return res.status(400).json({ error: 'Invalid message length' });
+    return res.status(400).json({ error: "Invalid message length" });
   }
 
   // Step 5: Process safe input
@@ -172,25 +183,27 @@ def chat():
 
 The following headers are configured in `vercel.json`:
 
-| Header | Purpose |
-|--------|---------|
-| `X-Content-Type-Options: nosniff` | Prevent MIME sniffing |
-| `X-Frame-Options: SAMEORIGIN` | Prevent clickjacking |
-| `X-XSS-Protection: 1; mode=block` | Enable XSS filter |
-| `Referrer-Policy` | Control referrer information |
-| `Content-Security-Policy` | Restrict script/resource sources |
-| `Permissions-Policy` | Disable unnecessary features |
+| Header                            | Purpose                          |
+| --------------------------------- | -------------------------------- |
+| `X-Content-Type-Options: nosniff` | Prevent MIME sniffing            |
+| `X-Frame-Options: SAMEORIGIN`     | Prevent clickjacking             |
+| `X-XSS-Protection: 1; mode=block` | Enable XSS filter                |
+| `Referrer-Policy`                 | Control referrer information     |
+| `Content-Security-Policy`         | Restrict script/resource sources |
+| `Permissions-Policy`              | Disable unnecessary features     |
 
 ---
 
 ## 📦 Dependencies for Backend Security
 
 ### Node.js
+
 ```bash
 npm install express-validator express-rate-limit helmet csrf
 ```
 
 ### Python
+
 ```bash
 pip install flask-limiter markupsafe email-validator
 ```
@@ -217,6 +230,7 @@ Before deploying to production:
 ## 🧪 Testing Security
 
 ### Test Client-Side Sanitization
+
 ```javascript
 // Should be escaped
 console.log(sanitizeInput("<script>alert('XSS')</script>"));
@@ -224,6 +238,7 @@ console.log(sanitizeInput("<script>alert('XSS')</script>"));
 ```
 
 ### Test Backend Rate Limiting
+
 ```bash
 for i in {1..15}; do
   curl -X POST http://localhost:3001/api/chat -d '{"message":"test"}'

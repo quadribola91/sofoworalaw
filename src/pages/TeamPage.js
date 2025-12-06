@@ -337,11 +337,15 @@ export default function TeamPage() {
                     className="w-full h-80 object-contain"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-100 opacity-0 hover:opacity-50 transition-opacity flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">Learn More</span>
+                    <span className="text-white font-bold text-lg">
+                      Learn More
+                    </span>
                   </div>
                   <div className="p-4 text-center">
                     <h5 className="font-semibold">{teamMembers[0].name}</h5>
-                    <h6 className="text-gray-600">{teamMembers[0].designation}</h6>
+                    <h6 className="text-gray-600">
+                      {teamMembers[0].designation}
+                    </h6>
                   </div>
                 </motion.div>
               )}
@@ -366,7 +370,9 @@ export default function TeamPage() {
                   className="w-full h-80 object-contain"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-100 opacity-0 hover:opacity-50 transition-opacity flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">Learn More</span>
+                  <span className="text-white font-bold text-lg">
+                    Learn More
+                  </span>
                 </div>
                 <div className="p-4 text-center">
                   <h5 className="font-semibold">{member.name}</h5>
@@ -394,7 +400,9 @@ export default function TeamPage() {
                   className="w-full h-80 object-contain"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-100 opacity-0 hover:opacity-50 transition-opacity flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">Learn More</span>
+                  <span className="text-white font-bold text-lg">
+                    Learn More
+                  </span>
                 </div>
                 <div className="p-4 text-center">
                   <h5 className="font-semibold">{member.name}</h5>

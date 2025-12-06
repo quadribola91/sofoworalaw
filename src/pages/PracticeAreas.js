@@ -130,19 +130,25 @@ export default function PracticeAreas() {
                 className="w-full text-left flex justify-between items-center"
               >
                 <h3 className="text-xl font-semibold">{section.title}</h3>
-                <span className="text-xl">
-                  {openState[index] ? "−" : "+"}
-                </span>
+                <span className="text-xl">{openState[index] ? "−" : "+"}</span>
               </button>
 
               {section.items.length > 0 ? (
-                <ul className={`mt-4 list-disc ml-6 text-gray-700 ${openState[index] ? "block" : "hidden"}`}>
+                <ul
+                  className={`mt-4 list-disc ml-6 text-gray-700 ${
+                    openState[index] ? "block" : "hidden"
+                  }`}
+                >
                   {section.items.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
               ) : (
-                <p className={`mt-4 text-gray-700 ${openState[index] ? "block" : "hidden"}`}>
+                <p
+                  className={`mt-4 text-gray-700 ${
+                    openState[index] ? "block" : "hidden"
+                  }`}
+                >
                   No items listed.
                 </p>
               )}

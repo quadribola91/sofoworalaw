@@ -48,7 +48,11 @@ export default function Chatbot() {
       response:
         "We specialize in corporate law, family law, criminal defense, real estate, and intellectual property.",
       actions: [
-        { type: "navigate", to: "/practice-areas", label: "See Practice Areas" },
+        {
+          type: "navigate",
+          to: "/practice-areas",
+          label: "See Practice Areas",
+        },
       ],
     },
     consultation: {
@@ -211,7 +215,9 @@ export default function Chatbot() {
       }
     } else if (action.type === "text") {
       if (action.label.toLowerCase().includes("phone")) {
-        pushBotMessage({ response: "Phone: (+234) 805 4012 125 | (+234) 806 4660 083" });
+        pushBotMessage({
+          response: "Phone: (+234) 805 4012 125 | (+234) 806 4660 083",
+        });
       } else if (action.label.toLowerCase().includes("email")) {
         pushBotMessage({ response: "Email: contact@sofoworalaw.com" });
       } else {
@@ -236,7 +242,9 @@ export default function Chatbot() {
           <div className="bg-brand text-white p-4 rounded-t-lg flex justify-between items-center">
             <div>
               <h3 className="font-semibold text-lg">Chat with us</h3>
-              <p className="text-sm opacity-90">We typically reply in minutes</p>
+              <p className="text-sm opacity-90">
+                We typically reply in minutes
+              </p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -271,19 +279,21 @@ export default function Chatbot() {
                   </span>
                 </div>
                 {/* Render action buttons for bot messages */}
-                {message.sender === "bot" && message.actions && message.actions.length > 0 && (
-                  <div className="mt-2 flex gap-2 ml-2">
-                    {message.actions.map((action, i) => (
-                      <button
-                        key={i}
-                        onClick={() => handleAction(action)}
-                        className="text-xs px-3 py-1 bg-gray-100 hover:bg-brand hover:text-white rounded transition"
-                      >
-                        {action.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
+                {message.sender === "bot" &&
+                  message.actions &&
+                  message.actions.length > 0 && (
+                    <div className="mt-2 flex gap-2 ml-2">
+                      {message.actions.map((action, i) => (
+                        <button
+                          key={i}
+                          onClick={() => handleAction(action)}
+                          className="text-xs px-3 py-1 bg-gray-100 hover:bg-brand hover:text-white rounded transition"
+                        >
+                          {action.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
               </div>
             ))}
 
