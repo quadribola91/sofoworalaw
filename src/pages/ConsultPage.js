@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ConsultPage() {
   return (
-    <section id="consult" className="section cta pt-10 pb-10 bg-white">
+    <section id="consult" className="section cta pt-10 pb-10 px-3 bg-white">
       <div className="container mx-auto">
         <div className="flex flex-wrap -mx-4 mt-20">
           {/* Form Column */}

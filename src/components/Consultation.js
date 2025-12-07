@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Consult() {
   return (
-    <section id="consult" className="py-20 bg-gray-50">
+    <section id="consult" className="py-20 px-3 bg-gray-50">
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h2 className="text-3xl font-bold mb-4 text-brand">Consult Us</h2>

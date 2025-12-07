@@ -3,7 +3,7 @@ import aboutImg from "../assets/logo-blue.png";
 
 export default function About() {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 px-3">
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-10">
         <div className="md:w-5/12">
           <img src={aboutImg} alt="About" className="rounded shadow-lg" />
@@ -17,12 +17,18 @@ export default function About() {
           </p>
           <p className="mb-4">
             The Firm was founded in 1989 by Olumide Sofowora, SAN with the
-            mission to be the “Pillar of Justice and Fairness” and has trained
-            over 50 lawyers over the years.
+            mission to be the “Pillar of Justice and Fairness” and has over the
+            years trained over 50 lawyers who have imbibed the high ethical
+            culture of the firm.
           </p>
           <p className="mb-6">
-            Our strength lies in the depth and variety of experiences of our
-            lawyers, delivering unique and personalized services.
+            The Strength of the firm lies particularly in the depth and variety
+            of experiences and exposure of our lawyers. Our quest for the
+            provision of a unique and personalized service to our clients has
+            also led to our innovation in anticipating clients’ needs through a
+            system of continuous professional development globally in areas of
+            our clients’ specialties thereby enhancing our understanding of
+            their business.
           </p>
           <div className="flex gap-4">
             <a

@@ -229,33 +229,50 @@ export default function Chatbot() {
   return (
     <>
       {/* Chat Widget */}
-      <div className="fixed bottom-4 right-4 z-40">
+      <div className="fixed bottom-3 right-3 md:bottom-4 md:right-4 z-40">
         {/* Chat Window */}
         <div
-          className={`absolute bottom-20 right-0 w-80 bg-white rounded-lg shadow-2xl transition-all duration-300 transform origin-bottom-right ${
-            isOpen
-              ? "scale-100 opacity-100 visible"
-              : "scale-75 opacity-0 invisible"
-          }`}
+          className={`absolute 
+      bottom-20 right-0 
+      w-72 sm:w-80 md:w-96 
+      max-h-[70vh] sm:max-h-[75vh] md:max-h-[80vh]
+      bg-white rounded-lg shadow-2xl 
+      transition-all duration-300 transform origin-bottom-right
+      ${
+        isOpen
+          ? "scale-100 opacity-100 visible"
+          : "scale-75 opacity-0 invisible"
+      }`}
         >
           {/* Header */}
-          <div className="bg-brand text-white p-4 rounded-t-lg flex justify-between items-center">
+          <div className="bg-brand text-white p-3 sm:p-4 rounded-t-lg flex justify-between items-center">
             <div>
-              <h3 className="font-semibold text-lg">Chat with us</h3>
-              <p className="text-sm opacity-90">
+              <h3 className="font-semibold text-base sm:text-lg">
+                Chat with us
+              </h3>
+              <p className="text-xs sm:text-sm opacity-90">
                 We typically reply in minutes
               </p>
             </div>
+
             <button
               onClick={() => setIsOpen(false)}
-              className="text-xl hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center transition"
+              className="text-xl hover:bg-white hover:bg-opacity-20 rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center transition"
             >
               ×
             </button>
           </div>
 
-          {/* Messages Container */}
-          <div className="h-80 overflow-y-auto p-4 bg-gray-50 flex flex-col">
+          {/* Messages */}
+          <div
+            className="
+      flex flex-col 
+      bg-gray-50 
+      overflow-y-auto 
+      p-3 sm:p-4 
+      h-[50vh] sm:h-[55vh] md:h-80
+    "
+          >
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -264,30 +281,40 @@ export default function Chatbot() {
                 }`}
               >
                 <div
-                  className={`max-w-xs px-4 py-2 rounded-lg ${
-                    message.sender === "user"
-                      ? "bg-brand text-white rounded-br-none"
-                      : "bg-gray-200 text-gray-900 rounded-bl-none"
-                  }`}
+                  className={`max-w-[75%] sm:max-w-xs px-3 py-2 rounded-lg text-sm 
+              ${
+                message.sender === "user"
+                  ? "bg-brand text-white rounded-br-none"
+                  : "bg-gray-200 text-gray-900 rounded-bl-none"
+              }
+            `}
                 >
-                  <p className="text-sm">{message.text}</p>
-                  <span className="text-xs opacity-70 mt-1 block">
+                  <p className="text-xs sm:text-sm">{message.text}</p>
+
+                  <span className="text-[10px] sm:text-xs opacity-70 mt-1 block">
                     {message.timestamp.toLocaleTimeString([], {
                       hour: "2-digit",
                       minute: "2-digit",
                     })}
                   </span>
                 </div>
-                {/* Render action buttons for bot messages */}
+
+                {/* Action buttons */}
                 {message.sender === "bot" &&
                   message.actions &&
                   message.actions.length > 0 && (
-                    <div className="mt-2 flex gap-2 ml-2">
+                    <div className="mt-2 flex flex-wrap gap-2 ml-2">
                       {message.actions.map((action, i) => (
                         <button
                           key={i}
                           onClick={() => handleAction(action)}
-                          className="text-xs px-3 py-1 bg-gray-100 hover:bg-brand hover:text-white rounded transition"
+                          className="
+                      text-[10px] sm:text-xs 
+                      px-2 py-1 
+                      bg-gray-100 
+                      hover:bg-brand hover:text-white 
+                      rounded transition
+                    "
                         >
                           {action.label}
                         </button>
@@ -297,6 +324,7 @@ export default function Chatbot() {
               </div>
             ))}
 
+            {/* Typing Indicator */}
             {isLoading && (
               <div className="flex justify-start mb-3">
                 <div className="bg-gray-200 text-gray-900 px-4 py-2 rounded-lg rounded-bl-none">
@@ -314,16 +342,24 @@ export default function Chatbot() {
 
           {/* Quick Replies */}
           {messages.length <= 1 && (
-            <div className="p-3 border-t border-gray-200 bg-white">
-              <p className="text-xs text-gray-600 mb-2 font-semibold">
+            <div className="p-2 sm:p-3 border-t border-gray-200 bg-white">
+              <p className="text-[10px] sm:text-xs text-gray-600 mb-2 font-semibold">
                 Common questions:
               </p>
+
               <div className="flex flex-col gap-2">
                 {quickReplies.map((reply, index) => (
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
-                    className="text-left text-xs bg-gray-100 hover:bg-brand hover:text-white text-gray-700 px-3 py-2 rounded transition-all duration-200"
+                    className="
+                text-left text-[10px] sm:text-xs 
+                bg-gray-100 
+                hover:bg-brand hover:text-white 
+                text-gray-700 
+                px-3 py-2 
+                rounded transition
+              "
                   >
                     {reply}
                   </button>
@@ -332,21 +368,36 @@ export default function Chatbot() {
             </div>
           )}
 
-          {/* Input Form */}
-          <div className="border-t border-gray-200 p-3 bg-white rounded-b-lg">
+          {/* Input */}
+          <div className="border-t border-gray-200 p-2 sm:p-3 bg-white rounded-b-lg">
             <form onSubmit={handleSendMessage} className="flex gap-2">
               <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Type a message..."
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-brand text-sm"
+                className="
+            flex-1 px-2 sm:px-3 py-2 
+            border border-gray-300 
+            rounded-lg 
+            focus:outline-none focus:border-brand 
+            text-xs sm:text-sm
+          "
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || inputValue.trim() === ""}
-                className="bg-brand text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="
+            bg-brand text-white 
+            px-3 sm:px-4 py-2 
+            rounded-lg 
+            text-xs sm:text-sm
+            hover:bg-opacity-90 
+            transition 
+            disabled:opacity-50 
+            disabled:cursor-not-allowed
+          "
               >
                 Send
               </button>
@@ -357,13 +408,19 @@ export default function Chatbot() {
         {/* Chat Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-brand text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          className="
+      bg-brand text-white rounded-full 
+      w-12 h-12 sm:w-14 sm:h-14 
+      flex items-center justify-center 
+      shadow-lg hover:shadow-xl 
+      transition-all duration-300 hover:scale-110
+    "
           aria-label="Open chat"
         >
           {isOpen ? (
-            <span className="text-2xl">×</span>
+            <span className="text-xl sm:text-2xl">×</span>
           ) : (
-            <span className="text-2xl">💬</span>
+            <span className="text-xl sm:text-2xl">💬</span>
           )}
         </button>
       </div>

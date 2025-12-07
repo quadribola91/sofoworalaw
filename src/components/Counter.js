@@ -51,8 +51,8 @@ export default function Counter() {
   }, []);
 
   return (
-    <section id="counter" className="py-20 bg-gray-100">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section id="counter" className="py-20 px-3 bg-gray-100">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
         {counters.map((counter, idx) => {
           const IconComponent = counter.icon;
           return (
