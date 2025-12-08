@@ -77,7 +77,7 @@ export default function Header() {
                     after:left-0 
                     after:w-full 
                     after:h-[2px] 
-                    after:bg-brand 
+                    after:bg-black 
                     after:scale-x-0 
                     after:origin-left 
                     after:transition-transform 

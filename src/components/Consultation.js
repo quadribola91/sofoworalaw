@@ -5,8 +5,9 @@ export default function Consult() {
     <section id="consult" className="py-20 px-3 bg-gray-50">
       <div className="container mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <h2 className="text-3xl font-bold mb-4 text-brand">Consult Us</h2>
-          <p className="mb-6">Fill the form below for a consultation.</p>
+          <h2 className="text-3xl font-bold mb-8 text-brand">Consult Us</h2>
+          <p className="mb-8">Fill the form below for a consultation.</p>
+          <div className="w-12 h-1 bg-brand mb-8"></div>
           <form className="space-y-4">
             <input
               type="text"
