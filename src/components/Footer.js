@@ -6,7 +6,7 @@ import { FaPhone } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-[#363636] text-white pt-10">
-      <div className="container p-24 mx-auto grid md:grid-cols-3 gap-8 mb-16">
+      <div className="container p-4 md:p-12 lg:p-24 mx-auto grid md:grid-cols-3 gap-8 mb-16">
         <div className="gap-3 gap-col-3">
           <img src={logo} alt="Logo" className="h-20 mb-4" />
           <p className="text-md">
