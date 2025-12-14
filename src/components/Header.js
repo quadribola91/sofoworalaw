@@ -62,7 +62,7 @@ export default function Header() {
         {/* DESKTOP NAV BAR */}
         <nav className="hidden md:block">
           <ul
-            className={`flex space-x-6 text-xl font-semibold transition-colors duration-500 ${
+            className={`flex space-x-6 text-md font-semibold transition-colors duration-500 ${
               scrolled ? "text-black" : "text-white"
             }`}
           >
@@ -77,7 +77,7 @@ export default function Header() {
                     after:left-0 
                     after:w-full 
                     after:h-[2px] 
-                    after:bg-brand 
+                    after:bg-black 
                     after:scale-x-0 
                     after:origin-left 
                     after:transition-transform 
@@ -95,22 +95,22 @@ export default function Header() {
         {/* MOBILE HAMBURGER BUTTON */}
         <button
           onClick={toggleMenu}
-          className="md:hidden flex flex-col gap-1.5 z-50"
+          className="md:hidden border-1.5 border-brand flex flex-col gap-1.5 z-50"
           aria-label="Toggle menu"
         >
           <span
             className={`block w-6 h-0.5 transition-all duration-300 ${
-              scrolled ? "bg-black" : "bg-white"
+              scrolled ? "bg-brand" : "bg-brand"
             } ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
           />
           <span
             className={`block w-6 h-0.5 transition-all duration-300 ${
-              scrolled ? "bg-black" : "bg-white"
+              scrolled ? "bg-brand" : "bg-brand"
             } ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
             className={`block w-6 h-0.5 transition-all duration-300 ${
-              scrolled ? "bg-black" : "bg-white"
+              scrolled ? "bg-brand" : "bg-brand"
             } ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
           />
         </button>
@@ -131,14 +131,14 @@ export default function Header() {
                   onClick={closeMenu}
                   className="
                     relative
-                    hover:text-brand
+                    hover:text-black
                     transition-colors duration-300
                     after:absolute 
                     after:-bottom-1 
                     after:left-0 
                     after:w-full 
                     after:h-[2px] 
-                    after:bg-brand 
+                    after:bg-black 
                     after:scale-x-0 
                     after:origin-left 
                     after:transition-transform 

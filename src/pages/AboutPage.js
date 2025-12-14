@@ -28,9 +28,9 @@ export default function AboutPage() {
           </p>
           <a
             href="#about"
-            className="px-6 py-3 border-2 border-brand text-brand bg-white font-semibold rounded-md hover:bg-brand hover:text-white transition-all"
+            className="px-8 py-4 border-2 border-brand text-brand bg-transparent font-semibold rounded-md hover:bg-brand hover:text-white transition-all"
           >
-            More About Us
+            MORE ABOUT US
           </a>
         </div>
       </section>

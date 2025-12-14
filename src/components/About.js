@@ -6,10 +6,13 @@ export default function About() {
     <section id="about" className="py-20 px-3">
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-10">
         <div className="md:w-5/12">
-          <img src={aboutImg} alt="About" className="rounded shadow-lg" />
+          <img src={aboutImg} alt="About" className="" />
         </div>
         <div className="md:w-6/12 md:ml-10">
-          <h2 className="text-3xl font-bold mb-4">About Our Firm</h2>
+          <h2 className="text-3xl font-bold mb-12 flex justify-start hover:underline">
+            About Our Firm
+          </h2>
+          <div className="w-12 h-1 bg-black mb-8"></div>
           <p className="mb-4">
             Olumide Sofowora is a Full Service Firm providing a comprehensive
             legal service to enable us assist our Clients meet their various

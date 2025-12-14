@@ -1,12 +1,13 @@
 import React from "react";
 // import heroBanner from "../assets/law-distance-learning-img-01.jpg";
+import slider from "../assets/sofowora_law_slide.jpg";
 
 export default function Slider() {
   return (
     <section id="slider" className="relative h-screen">
       <div className="absolute inset-0">
         <img
-          src="https://sofoworalaw.com/assets/images/banners/SOFOWORA_LAW_Slides2.jpg"
+          src={slider}
           alt="Slider Background"
           className="w-full h-full object-cover"
         />
