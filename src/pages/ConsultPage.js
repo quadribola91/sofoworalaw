@@ -1,4 +1,5 @@
 import React from "react";
+import contactus from "../assets/contact-us-pen.jpg";
 
 export default function ConsultPage() {
   return (
@@ -85,7 +86,7 @@ export default function ConsultPage() {
           {/* Image Column */}
           <div className="w-full md:w-5/12 px-4 mt-10 md:mt-0">
             <img
-              src="https://sofoworalaw.com/assets/images/contact-us-pen.jpg"
+              src={contactus}
               alt="Consultation"
               className="w-full h-full object-cover rounded"
             />

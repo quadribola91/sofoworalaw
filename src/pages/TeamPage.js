@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import olumide from "../assets/OLUMIDE-SOFOWORA-SAN.jpeg";
+import philip from "../assets/PHILIP-E.-TAGBO-ESQ.-LL.B.-Hons.-Uniben-B.L.jpeg";
+import muyiwa from "../assets/MUYIWA-A.-ESAN-ESQ.-LL.B.-Hons.-O.O.U.-B.L.-LL.M.-R.G.U.jpeg";
+import eleojo from "../assets/ELEOJO-O.-EKELE-LL.B.-Hons.-L.A.S.U.-B.L.jpeg";
+import gbeminiyi from "../assets/GBEMINIYI-SOFOWORA.jpeg";
+import feyisayo from "../assets/feyisayo_law.jpeg";
+import betse from "../assets/Betse-Dan-Abia.jpeg";
 
 const teamMembers = [
   {
     name: "OLUMIDE O. SOFOWORA ESQ., SAN, CArb.",
     designation:
       "SAN, CArb., LL.B. (Hons.) Lagos; LL.M. (Lond.); B.L. FCIArb.(UK)",
-    image:
-      "https://sofoworalaw.com/assets/images/team/OLUMIDE-SOFOWORA-SAN.jpeg",
+    image: olumide,
     email: "",
     bio: `OLUMIDE O. SOFOWORA ESQ., SAN, CArb.
 Bio
@@ -44,8 +50,7 @@ SAN, CArb., LL.B. (Hons.) Lagos; LL.M. (Lond.); B.L. FCIArb.(UK)
   {
     name: "PHILIP EJOR TAGBO",
     designation: "LL.B (HONS) UNIBEN, B.L",
-    image:
-      "https://sofoworalaw.com/assets/images/team/PHILIP-E.-TAGBO-ESQ.-LL.B.-Hons.-Uniben-B.L.jpeg",
+    image: philip,
     email: "philip.tagbo@sofoworalaw.com",
     bio: `PHILIP EJOR TAGBO
 Name: PHILIP EJOR TAGBO ESQ.
@@ -82,8 +87,7 @@ Nigerian Bar Association.`,
   {
     name: "MUYIWA ESAN",
     designation: "LL.B (Hons.), B.L, LL.M (Scot.)",
-    image:
-      "https://sofoworalaw.com/assets/images/team/MUYIWA-A.-ESAN-ESQ.-LL.B.-Hons.-O.O.U.-B.L.-LL.M.-R.G.U.jpeg",
+    image: muyiwa,
     email: "muyiwaesan@sofoworalaw.com",
     bio: `MUYIWA ESAN
 Name: MUYIWA ESAN
@@ -135,8 +139,7 @@ Nigeria Bar Association`,
   {
     name: "ELEOJO OLUDOLAPO EKELE",
     designation: "(MISS) LL.B, B.L, ACIArb. (UK)",
-    image:
-      "https://sofoworalaw.com/assets/images/team/ELEOJO-O.-EKELE-LL.B.-Hons.-L.A.S.U.-B.L.jpeg",
+    image: eleojo,
     email: "eleojoekele@sofoworalaw.com",
     bio: `ELEOJO OLUDOLAPO EKELE
 Name: Eleojo Oludolapo Ekele LLB. (Hons.),(L.A.S.U), B.L., ACIArb.(UK). 
@@ -178,8 +181,7 @@ Associate, Chartered Institute of Arbitrators of Nigeria`,
   {
     name: "FEYISAYO PHILLIPS",
     designation: "LL.B. (Hons.) Lagos; B.L",
-    image:
-      "https://sofoworalaw.com/assets/images/team/FEYISAYO-O.-PHILLIPS-LL.B.-Hons.-Lagos-B.L.jpeg",
+    image: feyisayo,
     email: "feyisayophillips@sofoworalaw.com",
     bio: `FEYISAYO PHILLIPS
 Name: FEYISAYO PHILLIPS LL.B. (Hons.) Lagos; B.L
@@ -200,7 +202,7 @@ She is a member of the Nigeria Bar Association.`,
   {
     name: "GBEMINIYI SOFOWORA",
     designation: "B.L., LL.M, MCIArb. (UK)",
-    image: "https://sofoworalaw.com/assets/images/team/GBEMINIYI-SOFOWORA.jpeg",
+    image: gbeminiyi,
     email: "gs@sofoworalaw.com",
     bio: `GBEMINIYI SOFOWORA
 Name: GBEMINIYI SOFOWORA B.L., LL.M, MCIArb. (UK)
@@ -246,7 +248,7 @@ Chartered Institute of Arbitrators UK`,
   {
     name: "BETSE DAN-ABIA",
     designation: "LLB, BL, LLM ACIArb. (UK)",
-    image: "https://sofoworalaw.com/assets/images/team/Betse-Dan-Abia.jpeg",
+    image: betse,
     email: "betsedanabia@sofoworalaw.com",
     bio: `BETSE DAN-ABIA
 Name: Betse Dan-Abia LLB, BL, LLM ACIArb. (UK)

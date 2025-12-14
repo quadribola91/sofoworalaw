@@ -1,4 +1,5 @@
 import React from "react";
+import contactus from "../assets/contact-us-pen.jpg";
 
 export default function Consult() {
   return (
@@ -66,11 +67,7 @@ export default function Consult() {
           </form>
         </div>
         <div>
-          <img
-            src="https://sofoworalaw.com/assets/images/contact-us-pen.jpg"
-            alt="Consult"
-            className="rounded shadow-lg"
-          />
+          <img src={contactus} alt="Consult" className="rounded shadow-lg" />
         </div>
       </div>
     </section>
